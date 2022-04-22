@@ -1,13 +1,12 @@
-import './App.css';
 import Routes from './routes';
 import GlobalStyles from './styles/global';
 
-function App() {
+const App = () => {
   return (
-    <>
+    <main>
       <GlobalStyles/>
       <Routes/>
-    </>
+    </main>
   );
 }
 
