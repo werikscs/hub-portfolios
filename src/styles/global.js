@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    /* background-color: var(--color-gray-4); */
+    background-color: var(--color-gray-4);
   }
 
   main{
@@ -33,6 +33,15 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  h2{
+    color: var(--color-gray-0);
+  }
+
+  label{
+    display: block;
+    color: var(--color-gray-0);
   }
 
   input{
@@ -59,6 +68,6 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-`
+`;
 
 export default GlobalStyles;
