@@ -12,9 +12,9 @@ const Login = () => {
       <S.Div>
         <h2>Login</h2>
 
-        <InputText label="Email" type="text" placeholder="Email" />
+        <InputText label="Email" placeholder="Email" />
 
-        <InputPassword />
+        <InputPassword label="Senha" placeholder="Senha" />
 
         <Button text="Entrar" />
 
