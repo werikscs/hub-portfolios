@@ -1,4 +1,5 @@
 import Button from "../../components/Button";
+import InputPassword from "../../components/InputPassword";
 import InputText from "../../components/InputText";
 import LogoKenzie from "../../components/LogoKenzie";
 import * as S from "./styles";
@@ -13,7 +14,7 @@ const Login = () => {
 
         <InputText label="Email" type="text" placeholder="Email" />
 
-        <InputText label="Senha" type="text" placeholder="Senha" />
+        <InputPassword />
 
         <Button text="Entrar" />
 
