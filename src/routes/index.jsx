@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import Login from "../pages/Login";
 
 const Routes = () => {
 
@@ -9,8 +10,8 @@ const Routes = () => {
 
     <Switch>
 
-      <Route path='/'>
-        {/* login */}
+      <Route exact path='/'>
+        <Login/>
       </Route>
 
       <Route path='/register'>

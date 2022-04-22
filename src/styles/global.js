@@ -26,7 +26,41 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--color-gray-4);
   }
 
+  main{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2{
+    color: var(--color-gray-0);
+  }
+
+  label{
+    display: block;
+    color: var(--color-gray-0);
+  }
+
+  input{
+    background-color: var(--color-gray-2);
+    color: var(--color-gray-0);
+    border: none;
+    outline: none;
+
+    ::placeholder{
+      color: var(--color-gray-1);
+    }
+
+    :focus{
+      outline: 1px solid var(--color-gray-0);
+    }
+  }
+
   button{
+    color: #ffffff;
     cursor: pointer;
   }
 
@@ -34,6 +68,6 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-`
+`;
 
 export default GlobalStyles;
