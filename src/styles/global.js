@@ -22,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Inter', sans-serif;
   }
 
+  html{
+    font-size: 18px;
+  }
+
   body{
     background-color: var(--color-gray-4);
   }
@@ -35,10 +39,6 @@ const GlobalStyles = createGlobalStyle`
     align-items: center;
 
     overflow: hidden;
-  }
-
-  h2{
-    color: var(--color-gray-0);
   }
 
   label{
