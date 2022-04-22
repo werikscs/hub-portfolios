@@ -13,14 +13,10 @@ export const Section = styled.section`
 
   section {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     width: 100%;
-
-    button {
-      width: fit-content;
-    }
   }
 `;
 
@@ -31,7 +27,8 @@ export const Div = styled.div`
 
   width: 100%;
 
-  padding: 34px 14px;
+  margin-top: 28px;
+  padding: 38px 14px;
 
   border-radius: 3px;
 
@@ -51,6 +48,6 @@ export const Div = styled.div`
     font-weight: 400;
     font-size: 0.6rem;
 
-    margin: 27px 0 20px;
+    margin: 5px 0 20px;
   }
 `;

@@ -19,6 +19,7 @@ export const Div = styled.div`
 
   width: 100%;
 
+  margin-top: 18px;
   padding: 34px 14px;
 
   border-radius: 3px;
