@@ -1,23 +1,21 @@
+import * as S from "./styles";
+
 const Login = () => {
-
-  return(
-
-    <section>
-
+  return (
+    <S.Section>
       <h1>Kenzie Hub</h1>
 
-      <div>
-
+      <S.Div>
         <h2>Login</h2>
 
         <div>
-          <div>Email</div>
-          <input type="text" placeholder="Email"/>
+          <label>Email</label>
+          <input type="text" placeholder="Email" />
         </div>
 
         <div>
-          <div>Email</div>
-          <input type="text" placeholder="Senha"/>
+          <label>Email</label>
+          <input type="text" placeholder="Senha" />
         </div>
 
         <button>Entrar</button>
@@ -25,13 +23,9 @@ const Login = () => {
         <span>Ainda não possui uma conta?</span>
 
         <button>Cadastre-se</button>
-
-      </div>
-
-    </section>
-
+      </S.Div>
+    </S.Section>
   );
-
-}
+};
 
 export default Login;
