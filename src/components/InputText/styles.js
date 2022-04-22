@@ -10,7 +10,7 @@ export const Div = styled.div`
   label {
     font-size: 0.625rem;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
     align-self: flex-start;
   }
