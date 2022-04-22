@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 const Routes = () => {
 
@@ -21,7 +20,7 @@ const Routes = () => {
       <Route path='/dashboard'>
         {/* dashboard */}
       </Route>
-      
+
     </Switch>
 
   );
