@@ -33,6 +33,8 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
   }
 
   h2{
@@ -45,6 +47,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   input{
+    width: 100%;
     background-color: var(--color-gray-2);
     color: var(--color-gray-0);
     border: none;

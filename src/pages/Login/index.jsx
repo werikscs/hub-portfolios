@@ -1,3 +1,4 @@
+import InputText from "../../components/InputText";
 import * as S from "./styles";
 
 const Login = () => {
@@ -8,15 +9,9 @@ const Login = () => {
       <S.Div>
         <h2>Login</h2>
 
-        <div>
-          <label>Email</label>
-          <input type="text" placeholder="Email" />
-        </div>
+        <InputText label="Email" type="text" placeholder="Email" />
 
-        <div>
-          <label>Email</label>
-          <input type="text" placeholder="Senha" />
-        </div>
+        <InputText label="Senha" type="text" placeholder="Senha" />
 
         <button>Entrar</button>
 
