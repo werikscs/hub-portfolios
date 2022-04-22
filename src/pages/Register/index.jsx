@@ -1,4 +1,5 @@
 import Button from "../../components/Button";
+import ButtonText from "../../components/ButtonText";
 import InputPassword from "../../components/InputPassword";
 import InputText from "../../components/InputText";
 import LogoKenzie from "../../components/LogoKenzie";
@@ -9,7 +10,7 @@ const Register = () => {
     <S.Section>
       <section>
         <LogoKenzie />
-        <button>voltar</button>
+        <ButtonText text="Voltar" />
       </section>
 
       <S.Div>
