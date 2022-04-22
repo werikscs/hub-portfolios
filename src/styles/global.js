@@ -63,6 +63,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button{
+    width: 100%;
     color: #ffffff;
     cursor: pointer;
   }
