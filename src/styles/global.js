@@ -23,10 +23,35 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    background-color: var(--color-gray-4);
+    /* background-color: var(--color-gray-4); */
+  }
+
+  main{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input{
+    background-color: var(--color-gray-2);
+    color: var(--color-gray-0);
+    border: none;
+    outline: none;
+
+    ::placeholder{
+      color: var(--color-gray-1);
+    }
+
+    :focus{
+      outline: 1px solid var(--color-gray-0);
+    }
   }
 
   button{
+    color: #ffffff;
     cursor: pointer;
   }
 
