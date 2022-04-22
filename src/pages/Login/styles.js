@@ -19,16 +19,26 @@ export const Div = styled.div`
 
   width: 100%;
 
-  padding: 0 14px;
+  padding: 34px 14px;
 
   border-radius: 3px;
 
   background-color: var(--color-gray-3);
 
   h2 {
-    margin-top: 34px;
     margin-bottom: 20px;
 
     font-size: 0.9rem;
+
+    color: var(--color-gray-0);
+  }
+
+  span {
+    color: var(--color-gray-1);
+
+    font-weight: 600;
+    font-size: 0.6rem;
+
+    margin: 27px 0 20px;
   }
 `;
