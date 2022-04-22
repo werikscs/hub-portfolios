@@ -66,6 +66,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     color: #ffffff;
     cursor: pointer;
+    border: none;
   }
 
   a{
