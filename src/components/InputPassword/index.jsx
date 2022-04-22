@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as S from "./styles";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
-const InputPassword = () => {
+const InputPassword = ({ label, ...rest }) => {
   const [icon, setIcon] = useState(AiFillEye);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -14,9 +14,9 @@ const InputPassword = () => {
 
   return (
     <S.Div>
-      <label>Password</label>
+      <label>{label}</label>
       <div>
-        <input type={showPassword ? "text" : "password"} placeholder="Senha" />
+        <input type={showPassword ? "text" : "password"} {...rest} />
         <button onClick={handleClickShowPassword}>{icon}</button>
       </div>
     </S.Div>
