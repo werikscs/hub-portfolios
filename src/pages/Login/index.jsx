@@ -1,10 +1,11 @@
 import InputText from "../../components/InputText";
+import LogoKenzie from "../../components/LogoKenzie";
 import * as S from "./styles";
 
 const Login = () => {
   return (
     <S.Section>
-      <h1>Kenzie Hub</h1>
+      <LogoKenzie />
 
       <S.Div>
         <h2>Login</h2>
