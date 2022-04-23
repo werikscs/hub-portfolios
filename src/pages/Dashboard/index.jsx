@@ -13,17 +13,44 @@ const Dashboard = () => {
 
       <hr />
 
-      <div>
+      <S.Div>
         <h2>Olá, Samuel Leão</h2>
         <span>Primeiro módulo (Introdução ao Frontend)</span>
-      </div>
+      </S.Div>
 
       <hr />
 
       <Header>
         <h3>Tecnologias</h3>
-        <ButtonText text="+" />
+        <ButtonText text="+" fontSize="1rem" />
       </Header>
+
+      <S.Ul>
+        <li>
+          <h4>React JS</h4>
+          <span>Intermediário</span>
+        </li>
+
+        <li>
+          <h4>Next JS</h4>
+          <span>Iniciante</span>
+        </li>
+
+        <li>
+          <h4>Material UI</h4>
+          <span>Avançado</span>
+        </li>
+
+        <li>
+          <h4>Styled-Components</h4>
+          <span>Intermediário</span>
+        </li>
+
+        <li>
+          <h4>Chakra UI</h4>
+          <span>Iniciante</span>
+        </li>
+      </S.Ul>
     </S.Section>
   );
 };
