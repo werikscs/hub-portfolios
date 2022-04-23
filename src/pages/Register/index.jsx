@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
 import Header from "../../components/Header";
@@ -8,11 +9,17 @@ import SelectInput from "../../components/SelectInput";
 import * as S from "./styles";
 
 const Register = () => {
+  const history = useHistory();
+
+  const goToLogin = () => {
+    history.push("/");
+  };
+
   return (
     <S.Section>
       <Header>
         <LogoKenzie />
-        <ButtonText text="Voltar" />
+        <ButtonText text="Voltar" callback={goToLogin} />
       </Header>
 
       <S.Div>

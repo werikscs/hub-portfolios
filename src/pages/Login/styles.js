@@ -13,7 +13,7 @@ export const Section = styled.section`
   padding: 0 12px;
 `;
 
-export const Div = styled.div`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ export const Div = styled.div`
   width: 100%;
 
   margin-top: 18px;
-  padding: 34px 14px;
+  padding: 34px 14px 26px;
 
   border-radius: 3px;
 
@@ -35,12 +35,12 @@ export const Div = styled.div`
     color: var(--color-gray-0);
   }
 
-  span {
+  .hasAnAccount {
     color: var(--color-gray-1);
 
     font-weight: 600;
     font-size: 0.6rem;
 
-    margin: 27px 0 20px;
+    margin: 10px 0;
   }
 `;
