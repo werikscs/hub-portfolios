@@ -13,7 +13,7 @@ export const Div = styled.div`
   label {
     font-size: 0.625rem;
 
-    margin-bottom: 17px;
+    margin: 17px 0;
 
     margin-right: auto;
   }
