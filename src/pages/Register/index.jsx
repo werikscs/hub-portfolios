@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
+import Header from "../../components/Header";
 import InputPassword from "../../components/InputPassword";
 import InputText from "../../components/InputText";
 import LogoKenzie from "../../components/LogoKenzie";
@@ -8,10 +9,10 @@ import * as S from "./styles";
 const Register = () => {
   return (
     <S.Section>
-      <section>
+      <Header>
         <LogoKenzie />
         <ButtonText text="Voltar" />
-      </section>
+      </Header>
 
       <S.Div>
         <h2>Crie sua conta</h2>
