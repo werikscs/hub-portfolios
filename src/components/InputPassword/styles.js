@@ -10,7 +10,7 @@ export const Div = styled.div`
   label {
     font-size: 0.625rem;
 
-    margin-bottom: 17px;
+    margin: 17px 0;
 
     align-self: flex-start;
   }
@@ -24,7 +24,6 @@ export const Div = styled.div`
       height: 38.5px;
 
       padding: 0 13px;
-      margin-bottom: 21px;
 
       font-size: 0.8rem;
 
@@ -33,7 +32,7 @@ export const Div = styled.div`
 
     button {
       position: absolute;
-      top: 20%;
+      top: 33%;
       right: 11px;
 
       width: fit-content;
