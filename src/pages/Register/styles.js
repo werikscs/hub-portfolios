@@ -10,14 +10,6 @@ export const Section = styled.section`
   max-width: 370px;
 
   padding: 0 12px;
-
-  section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100%;
-  }
 `;
 
 export const Div = styled.div`
