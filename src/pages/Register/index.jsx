@@ -26,7 +26,7 @@ const Register = () => {
 
         <InputPassword
           label="Confirmar Senha"
-          placeholder="Digite novamente sua senha"
+          placeholder="Digite a senha novamente"
         />
 
         <Button text="Cadastrar" colorType="negative" />
