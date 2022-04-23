@@ -1,13 +1,18 @@
 import { useState } from "react";
-import * as S from "./styles";
+
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
-const InputPassword = ({ label, ...rest }) => {
+import SpanError from "../SpanError";
+
+import * as S from "./styles";
+
+const InputPassword = ({ label, name, register, error = "", ...rest }) => {
   const [icon, setIcon] = useState(AiFillEye);
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleClickShowPassword = () => {
+  const handleClickShowPassword = (e) => {
+    e.preventDefault();
     setShowPassword(!showPassword);
     setIcon(showPassword ? AiFillEye : AiFillEyeInvisible);
   };
@@ -16,9 +21,14 @@ const InputPassword = ({ label, ...rest }) => {
     <S.Div>
       <label>{label}</label>
       <div>
-        <input type={showPassword ? "text" : "password"} {...rest} />
+        <input
+          type={showPassword ? "text" : "password"}
+          {...register(name)}
+          {...rest}
+        />
         <button onClick={handleClickShowPassword}>{icon}</button>
       </div>
+      {error && <SpanError message={error} />}
     </S.Div>
   );
 };
