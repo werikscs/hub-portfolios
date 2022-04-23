@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Span = styled.span`
-  padding: 0;
+  padding: 4px 0 0;
   margin: 0;
 
   font-size: 0.7rem;
