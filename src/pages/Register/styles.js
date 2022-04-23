@@ -13,7 +13,7 @@ export const Section = styled.section`
   padding: 0 12px;
 `;
 
-export const Div = styled.div`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +35,7 @@ export const Div = styled.div`
     color: var(--color-gray-0);
   }
 
-  span {
+  .register-msg {
     color: var(--color-gray-1);
 
     font-weight: 400;
