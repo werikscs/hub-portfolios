@@ -12,6 +12,8 @@ export const Section = styled.section`
   margin: 16px 0;
   padding: 0 12px;
 
+  position: relative;
+
   hr {
     width: 100%;
     height: 1px;

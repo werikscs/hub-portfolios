@@ -8,6 +8,8 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
 
+  width: ${({ width }) => width || "%100"};
+
   background-color: ${({ colorType }) => {
     switch (colorType) {
       case "disabled":
@@ -24,6 +26,8 @@ export const Button = styled.button`
       switch (colorType) {
         case "disabled":
           return "var(--color-gray-2)";
+        case "negative":
+          return "none";
         default:
           return "var(--color-primary-focus)";
       }
