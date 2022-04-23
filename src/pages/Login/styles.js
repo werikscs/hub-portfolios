@@ -9,6 +9,7 @@ export const Section = styled.section`
   min-width: 320px;
   max-width: 370px;
 
+  margin: 16px 0;
   padding: 0 12px;
 `;
 
