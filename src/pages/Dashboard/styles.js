@@ -85,6 +85,10 @@ export const Ul = styled.ul`
 
     cursor: pointer;
 
+    :hover {
+      background-color: var(--color-gray-2);
+    }
+
     h4 {
       font-weight: 700;
       font-size: 0.9rem;
@@ -97,10 +101,6 @@ export const Ul = styled.ul`
       font-size: 0.75rem;
 
       color: var(--color-gray-1);
-    }
-
-    :hover {
-      background-color: var(--color-gray-2);
     }
   }
 `;
