@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
+export const Form = styled.form`
   position: absolute;
   top: 160px;
 
