@@ -40,7 +40,7 @@ const Modal = ({
   const [select, setSelect] = useState(initialSelect);
 
   useEffect(() => {
-    setNewSelect(select);
+    if (setNewSelect) setNewSelect(select);
   }, [select]);
 
   return (
