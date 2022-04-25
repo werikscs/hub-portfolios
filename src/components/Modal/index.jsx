@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Button from "../Button";
 import InputText from "../InputText";
@@ -20,6 +20,7 @@ const Modal = ({
   options,
   valueText = "",
   initialSelect = 0,
+  setNewSelect,
 }) => {
   const schema = yup.object().shape({
     text: yup.string().required(),
@@ -37,6 +38,10 @@ const Modal = ({
   };
 
   const [select, setSelect] = useState(initialSelect);
+
+  useEffect(() => {
+    setNewSelect(select);
+  }, [select]);
 
   return (
     <S.Form onSubmit={handleSubmit(onSubmit)}>
