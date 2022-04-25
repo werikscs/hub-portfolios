@@ -37,6 +37,7 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
 
   const showModalRegisterFunction = () => {
     setShowModalRegister(!showModalRegister);
+    setDataLI({});
   };
 
   const history = useHistory();
@@ -55,6 +56,18 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
       .get(`/users/${userId}`)
       .then((res) => setDataAPI(res.data))
       .catch((err) => console.log(err));
+  };
+
+  const deleteTech = () => {
+    api
+      .delete(`/users/techs/${dataLI.id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        loadDataAPI();
+        setShowModalEdit(!showModalEdit);
+        setDataLI({});
+      });
   };
 
   useEffect(() => {
@@ -84,7 +97,7 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
           inputText="Nome"
           inputTextPlaceholder="Nome da Tecnologia"
           inputSelect="Selecionar Status"
-          options={["Primeiro Módudo", "Segundo Módulo", "Terceiro Módulo"]}
+          options={optionsStatus}
           buttons={[{ text: "Cadastrar Tecnologia" }]}
         />
       )}
@@ -100,7 +113,13 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
           options={optionsStatus}
           buttons={[
             { text: "Salvar Alterações", colorType: "negative" },
-            { text: "Excluir", colorType: "disabled", width: "fit-content" },
+            {
+              text: "Excluir",
+              colorType: "disabled",
+              width: "fit-content",
+              callback: deleteTech,
+              type: "button",
+            },
           ]}
         />
       )}
