@@ -36,9 +36,17 @@ const Register = ({ isAuthenticated }) => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = (dataForm) => {
-    console.log(errors);
-    console.log(dataForm, options[select] + optionsDetails[select]);
+  const onSubmit = ({ email, password, name }) => {
+    const objRegister = {
+      email: email,
+      password: password,
+      name: name,
+      bio: "Lorem ipsum dolor emet",
+      contact: "linkedin/in/johndoe",
+      course_module: `${options[select] + optionsDetails[select]}`,
+    };
+    console.log(objRegister);
+    api.post("/users", objRegister).then((res) => console.log(res));
   };
 
   const options = [
