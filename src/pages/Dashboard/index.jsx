@@ -23,6 +23,8 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
     JSON.parse(localStorage.getItem("@KenzieHub:user-id"))
   );
 
+  const [optionsStatus] = useState(["Iniciante", "Intermediário", "Avançado"]);
+
   const [showModalEdit, setShowModalEdit] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
 
@@ -92,8 +94,10 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
           closeModal={showModalEditFunction}
           text="Detalhes da Tecnologia"
           inputText="Nome do Projeto"
+          valueText={dataLI.title}
           inputSelect="Status"
-          options={["Iniciante", "Indermediário", "Avançando"]}
+          initialSelect={dataLI.status}
+          options={optionsStatus}
           buttons={[
             { text: "Salvar Alterações", colorType: "negative" },
             { text: "Excluir", colorType: "disabled", width: "fit-content" },
@@ -133,11 +137,11 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
                 id={tech.id}
                 onClick={() => {
                   setShowModalEdit(true);
-                  // setDataLI({
-                  //   id: tech.id,
-                  //   title: tech.title,
-                  //   status: options.findIndex(tech.status),
-                  // });
+                  setDataLI({
+                    id: tech.id,
+                    title: tech.title,
+                    status: optionsStatus.findIndex((op) => op === tech.status),
+                  });
                 }}>
                 <h4>{tech.title}</h4>
                 <span>{tech.status}</span>
