@@ -30,6 +30,7 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
 
   const [dataModal, setDataModal] = useState({});
   const [dataLI, setDataLI] = useState({});
+  const [newSelect, setNewSelect] = useState(0);
 
   const showModalEditFunction = () => {
     setShowModalEdit(!showModalEdit);
@@ -55,6 +56,20 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
     api
       .get(`/users/${userId}`)
       .then((res) => setDataAPI(res.data))
+      .catch((err) => console.log(err));
+  };
+
+  const editTech = () => {
+    const newStatus = { status: optionsStatus[newSelect] };
+    api
+      .put(`/users/techs/${dataLI.id}`, newStatus, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        loadDataAPI();
+        setShowModalEdit(!showModalEdit);
+        setDataLI({});
+      })
       .catch((err) => console.log(err));
   };
 
@@ -110,9 +125,15 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
           valueText={dataLI.title}
           inputSelect="Status"
           initialSelect={dataLI.status}
+          setNewSelect={setNewSelect}
           options={optionsStatus}
           buttons={[
-            { text: "Salvar Alterações", colorType: "negative" },
+            {
+              text: "Salvar Alterações",
+              colorType: "negative",
+              type: "button",
+              callback: editTech,
+            },
             {
               text: "Excluir",
               colorType: "disabled",
@@ -159,7 +180,10 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
                   setDataLI({
                     id: tech.id,
                     title: tech.title,
-                    status: optionsStatus.findIndex((op) => op === tech.status),
+                    status: optionsStatus.findIndex((op) => {
+                      const re = RegExp(op, "i");
+                      return re.test(tech.status);
+                    }),
                   });
                 }}>
                 <h4>{tech.title}</h4>
