@@ -45,14 +45,24 @@ const Modal = ({
         <span onClick={closeModal}>X</span>
       </div>
       <section>
-        <InputText
-          label={inputText}
-          placeholder={inputTextPlaceholder}
-          name="text"
-          value={valueText}
-          register={register}
-          error={errors.text?.message}
-        />
+        {valueText ? (
+          <InputText
+            label={inputText}
+            placeholder={inputTextPlaceholder}
+            name="text"
+            value={valueText}
+            register={register}
+            error={errors.text?.message}
+          />
+        ) : (
+          <InputText
+            label={inputText}
+            placeholder={inputTextPlaceholder}
+            name="text"
+            register={register}
+            error={errors.text?.message}
+          />
+        )}
         <SelectInput
           label={inputSelect}
           options={options}
@@ -68,6 +78,8 @@ const Modal = ({
               text={button.text}
               colorType={button?.colorType}
               width={button.width}
+              callback={button.callback}
+              type={button.type}
             />
           );
         })}
