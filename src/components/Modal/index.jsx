@@ -18,6 +18,8 @@ const Modal = ({
   inputTextPlaceholder,
   buttons,
   options,
+  valueText = "",
+  initialSelect = 0,
 }) => {
   const schema = yup.object().shape({
     text: yup.string().required(),
@@ -34,7 +36,7 @@ const Modal = ({
     closeModal();
   };
 
-  const [select, setSelect] = useState(0);
+  const [select, setSelect] = useState(initialSelect);
 
   return (
     <S.Form onSubmit={handleSubmit(onSubmit)}>
@@ -47,6 +49,7 @@ const Modal = ({
           label={inputText}
           placeholder={inputTextPlaceholder}
           name="text"
+          value={valueText}
           register={register}
           error={errors.text?.message}
         />
