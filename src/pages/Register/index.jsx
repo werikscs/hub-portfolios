@@ -13,9 +13,13 @@ import LogoKenzie from "../../components/LogoKenzie";
 import SelectInput from "../../components/SelectInput";
 
 import * as S from "./styles";
+
 import { useState } from "react";
 
-const Register = () => {
+import api from "../../services/api";
+import { Redirect } from "react-router-dom";
+
+const Register = ({ isAuthenticated }) => {
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório!"),
     email: yup.string().required("Campo obrigatório!"),
@@ -34,18 +38,34 @@ const Register = () => {
 
   const onSubmit = (dataForm) => {
     console.log(errors);
-    console.log(dataForm, options[select]);
+    console.log(dataForm, options[select] + optionsDetails[select]);
   };
 
-  const options = ["Primeiro Módulo", "Segundo Módulo", "Terceiro Módulo"];
+  const options = [
+    "Primeiro módulo",
+    "Segundo módulo",
+    "Terceiro módulo",
+    "Quarto módulo",
+  ];
+
+  const optionsDetails = [
+    " (Introdução ao Frontend)",
+    " (Frontend Avançado)",
+    " (Introdução ao Backend)",
+    " (Backend Avançado)",
+  ];
 
   const [select, setSelect] = useState(0);
 
   const history = useHistory();
 
   const goToLogin = () => {
-    history.push("/");
+    return history.push("/");
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <S.Section>
