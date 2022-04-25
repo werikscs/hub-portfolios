@@ -9,9 +9,12 @@ import InputPassword from "../../components/InputPassword";
 import InputText from "../../components/InputText";
 import LogoKenzie from "../../components/LogoKenzie";
 
-import * as S from "./styles";
+import api from "../../services/api";
 
-const Login = () => {
+import * as S from "./styles";
+import { Redirect } from "react-router-dom";
+
+const Login = ({ isAuthenticated, setIsAuthenticated }) => {
   const schema = yup.object().shape({
     email: yup.string().required("Campo obrigatório!"),
     password: yup.string().required("Campo obrigatório"),
@@ -24,14 +27,31 @@ const Login = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (dataForm) => {
-    console.log(dataForm);
+    api
+      .post("/sessions", dataForm)
+      .then((res) => {
+        const token = res.data.token;
+        const userId = res.data.user.id;
+
+        localStorage.setItem("@KenzieHub:token", JSON.stringify(token));
+        localStorage.setItem("@KenzieHub:user-id", JSON.stringify(userId));
+
+        setIsAuthenticated(true);
+
+        return history.push("/dashboard");
+      })
+      .catch((err) => console.log(err));
   };
 
   const history = useHistory();
 
   const goToRegister = () => {
-    history.push("/register");
+    return history.push("/register");
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <S.Section>
