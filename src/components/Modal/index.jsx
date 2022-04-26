@@ -23,7 +23,7 @@ const Modal = ({
   setNewSelect,
 }) => {
   const schema = yup.object().shape({
-    text: yup.string().required(),
+    text: yup.string().required("Campo obrigatório!"),
   });
 
   const {

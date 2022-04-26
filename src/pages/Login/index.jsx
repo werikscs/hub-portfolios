@@ -13,6 +13,7 @@ import api from "../../services/api";
 
 import * as S from "./styles";
 import { Redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = ({ isAuthenticated, setIsAuthenticated }) => {
   const schema = yup.object().shape({
@@ -38,9 +39,11 @@ const Login = ({ isAuthenticated, setIsAuthenticated }) => {
 
         setIsAuthenticated(true);
 
+        toast.success("Logado com sucesso!");
+
         return history.push("/dashboard");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Ops! Algo deu errado!"));
   };
 
   const history = useHistory();
