@@ -34,7 +34,6 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
 
     width: 100%;
-    min-height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -73,6 +72,51 @@ const GlobalStyles = createGlobalStyle`
 
   a{
     text-decoration: none;
+  }
+
+  .Toastify__toast-container {
+    font-family: 'Inter';
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    color: var(--color-gray-0);
+  }
+
+  .Toastify__toast-body{
+    width: 100%;
+  }
+
+  .Toastify__toast{
+    background-color: var(--color-gray-2);
+  }
+
+  .Toastify__toast-icon{
+    width: 28px;
+  }
+
+  .Toastify__toast--error .Toastify__toast-icon svg{
+    fill: var(--color-error);
+  }
+
+  .Toastify__toast--success .Toastify__toast-icon svg{
+    fill: var(--color-sucess);
+  }
+
+  .Toastify__progress-bar--error{
+    background-color: var(--color-error);
+  }
+
+  .Toastify__progress-bar--success{
+    background-color: var(--color-sucess);
+  }
+
+
+  .Toastify__close-button svg{
+    filter: invert(57%) sepia(16%) saturate(189%) hue-rotate(169deg) brightness(94%) contrast(87%);
+  }
+
+  .Toastify__close-button{
+    width: fit-content;
   }
 
 `;

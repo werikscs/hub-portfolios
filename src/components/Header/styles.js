@@ -6,4 +6,8 @@ export const Section = styled.section`
   align-items: center;
 
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    height: 72px;
+  }
 `;

@@ -45,6 +45,8 @@ export const Div = styled.div`
         filter: invert(58%) sepia(6%) saturate(453%) hue-rotate(169deg)
           brightness(95%) contrast(89%);
         font-size: 15px;
+
+        pointer-events: none;
       }
     }
   }
