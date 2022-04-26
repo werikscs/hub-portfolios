@@ -1,8 +1,16 @@
+import { useState } from "react";
+
 import { useForm } from "react-hook-form";
+
 import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import { toast } from "react-toastify";
+
+import api from "../../services/api";
 
 import Button from "../../components/Button";
 import ButtonText from "../../components/ButtonText";
@@ -13,11 +21,6 @@ import LogoKenzie from "../../components/LogoKenzie";
 import SelectInput from "../../components/SelectInput";
 
 import * as S from "./styles";
-
-import { useState } from "react";
-
-import api from "../../services/api";
-import { Redirect } from "react-router-dom";
 
 const Register = ({ isAuthenticated }) => {
   const schema = yup.object().shape({
@@ -46,7 +49,10 @@ const Register = ({ isAuthenticated }) => {
       course_module: `${options[select] + optionsDetails[select]}`,
     };
     console.log(objRegister);
-    api.post("/users", objRegister).then((res) => console.log(res));
+    api
+      .post("/users", objRegister)
+      .then(() => toast.success("Conta criada com sucesso!"))
+      .catch(() => toast.error("Ops! Algo deu errado!"));
   };
 
   const options = [
