@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Form = styled.form`
   position: absolute;
   top: 160px;
+  z-index: 10;
 
   width: 100%;
   max-width: 370px;
