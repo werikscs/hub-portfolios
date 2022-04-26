@@ -98,7 +98,7 @@ export const Ul = styled.ul`
   width: 100%;
   max-height: 420px;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 
   margin-top: 21px;
   padding: 22px 8.5px;
