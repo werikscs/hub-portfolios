@@ -13,7 +13,6 @@ import * as S from "./styles";
 
 const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
   const [dataAPI, setDataAPI] = useState(null);
-  const [selectRegister] = useState();
 
   const [token] = useState(
     JSON.parse(localStorage.getItem("@KenzieHub:token")) || ""
@@ -150,14 +149,14 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
         <ButtonText text="Sair" callback={exitDashboard} />
       </Header>
 
-      <hr />
+      <hr className="hr1" />
 
       <S.Div>
         <h2>{dataAPI && dataAPI.name}</h2>
         <span>Primeiro módulo (Introdução ao Frontend)</span>
       </S.Div>
 
-      <hr />
+      <hr className="hr2" />
 
       <Header>
         <h3>Tecnologias</h3>
