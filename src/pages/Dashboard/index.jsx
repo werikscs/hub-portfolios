@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { toast } from "react-toastify";
 
 import ButtonText from "../../components/ButtonText";
 import Header from "../../components/Header";
@@ -65,11 +66,12 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
+        toast.success("Alterações salvas!");
         loadDataAPI();
         setShowModalEdit(!showModalEdit);
         setDataLI({});
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Não foi possível alterar!"));
   };
 
   const deleteTech = () => {
@@ -78,10 +80,12 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
+        toast.success("Tecnologia excluída!");
         loadDataAPI();
         setShowModalEdit(!showModalEdit);
         setDataLI({});
-      });
+      })
+      .catch((err) => toast.error("Não foi possível deletar!"));
   };
 
   useEffect(() => {
@@ -94,8 +98,12 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
         .post("/users/techs", dataModal, {
           headers: { Authorization: `Bearer ${token}` },
         })
-        .then((res) => loadDataAPI())
-        .then((res) => setDataModal({}));
+        .then((res) => {
+          toast.success("Tecnologia adicionada!");
+          loadDataAPI();
+          setDataModal({});
+        })
+        .catch((err) => toast.error("Não foi possível criar a tecnologia!"));
     }
   }, [dataModal]);
 
@@ -151,10 +159,12 @@ const Dashboard = ({ isAuthenticated, setIsAuthenticated }) => {
 
       <hr className="hr1" />
 
-      <S.Div>
-        <h2>{dataAPI && dataAPI.name}</h2>
-        <span>Primeiro módulo (Introdução ao Frontend)</span>
-      </S.Div>
+      {dataAPI && (
+        <S.Div>
+          <h2>{dataAPI.name}</h2>
+          <span>{dataAPI.course_module}</span>
+        </S.Div>
+      )}
 
       <hr className="hr2" />
 
