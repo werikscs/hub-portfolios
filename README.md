@@ -1,6 +1,6 @@
 # **Hub de Portfólios**
 
-o objetivo desta aplicação foi exercitar conceitos e utilização de bibliotecas de React.js. Também foi utilização o padrão Conventional Commits.
+O objetivo desta aplicação foi exercitar conceitos e utilização de bibliotecas de React.js. Também foi utilização o padrão Conventional Commits.
 
 Kenziehub é um hub de portfólios de programadores da Kenzie Academy Brasil.
 
